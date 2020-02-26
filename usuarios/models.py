@@ -41,10 +41,9 @@ class CustomUsuario(AbstractUser):
     fone = models.CharField('Telefone', max_length=15)
     is_staff = models.BooleanField('Membro da equipe', default=True)
 
-    # Foi necessario acrescentar sobrescrever esses 3 atributos para fazer eles ficarem obrigatorios
+    # Foi necessario sobrescrever esses 2 atributos para fazer eles ficarem obrigatorios
     first_name = models.CharField('Primeiro nome', max_length=30, blank=False)
     last_name = models.CharField('Último nome', max_length=150, blank=False)
-    email = models.EmailField('Endereço de email', blank=False)
 
     # Preciso especificar meu gerenciador personalizado, senão django usará o seu padrão
     objects = UsuarioManager()
